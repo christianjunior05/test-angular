@@ -1,5 +1,10 @@
 <div class="parent">
-  <div class="div1"> </div>
+  <div class="div1">
+    <p class="text-center text-white">
+      <h1>BIENVENUE SUR RICVA</h1>
+     
+ 
+     </div>
   <div class="div2 ">
     <div class="container">
       <div class="login-form">
@@ -14,6 +19,7 @@
               <label for="password">Mot de passe</label>
               <div class="input-group">
                 <input type="{{showPassword ? 'text' : 'password'}}" id="password" class="form-control" required style="width: 430px;">
+                <br>
                 <div class="input-group-append">
                   <button class="btn btn-outline-secondary" type="button" (click)="togglePasswordVisibility()">
                     <i class="fa" [ngClass]="{'fa-eye': showPassword, 'fa-eye-slash': !showPassword}"></i>
@@ -22,7 +28,7 @@
               </div>
             </div>
             <div class="mt-3 text-center">
-              <button type="submit" (click)="login()" class="btn btn-primary btn-block" style="width: 225px;">Se Connecter</button>
+              <button type="submit" (click)="login()" class="btn " style="width: 225px;">Connexion</button>
             </div>
           </div>
         </form>
