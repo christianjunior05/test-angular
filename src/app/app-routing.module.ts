@@ -7,6 +7,7 @@ import {ForgotPasswordComponent} from "./component/forgot-password/forgot-passwo
 import {DashboardComponent} from "./component/dashboard/dashboard.component";
 
 const routes: Routes = [
+  {path: '', redirectTo : 'login', pathMatch: "full"},
   {path: 'login', component : LoginComponent},
   {path: 'dashboard', component : DashboardComponent},
   {path: 'register', component : RegisterComponent},

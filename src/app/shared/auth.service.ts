@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/compat/auth';
 import {GoogleAuthProvider} from '@angular/fire/auth'
 import {Router} from '@angular/router';
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class AuthService {
       localStorage.setItem('token', 'true');
 
       if (res.user?.emailVerified == true) {
-        this.router.navigate(['dashboard']);
+        this.router.navigate(['/dashboard']);
       } else {
         this.router.navigate(['/verify-email']);
       }
@@ -51,12 +52,16 @@ export class AuthService {
   }
 
   // forgot password
-  forgotPassword(email: string) {
-    this.fireauth.sendPasswordResetEmail(email).then(() => {
-      this.router.navigate(['/verify-email']);
-    }, err => {
-      alert('Something went wrong');
-    })
+  forgotPassword(email: string): Observable<void> {
+    return new Observable<void>((observer) => {
+      this.fireauth.sendPasswordResetEmail(email).then(() => {
+        this.router.navigate(['/verify-email']);
+        observer.next();
+        observer.complete();
+      }).catch((error) => {
+        observer.error(error);
+      });
+    });
   }
 
   // email verification
