@@ -1,30 +1,81 @@
+/* Base styles for all screen sizes */
 .parent {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    }
-    
-.div1 { grid-area: 1 / 1 / 6 / 4;
+  }
+  
+  .div1 {
+    grid-area: 1 / 1 / 6 / 8;
     padding: 30px;
-}
-.div2 { grid-area: 1 / 4 / 6 / 8;
-        background-image: url("src/assets/femme.jpg");
-        background-size: cover;
-        width: 100%;
-        height: 100vh;
-}
-.btn{
+    margin-left: 15px;
+  }
+  
+  .div2 {
+    grid-area: 1 / 4 / 6 / 8;
+    background-image: url("src/assets/femme.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .btn {
     background-color: #CB7A4Bff;
     color: white;
-}
-
-.btn:hover{
+  }
+  
+  .btn:hover {
     background-color: #cb660e;
     color: white;
-}
-a{
-   color: black;
-   text-decoration: none;
-}
+  }
+  
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  /* Media query for smaller screens */
+  @media screen and (max-width: 768px) {
+    .parent {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(10, 1fr);
+    }
+  
+    .div1 {
+      grid-area: 1 / 1 / 11 / 2;
+      padding: 15px;
+    }
+  
+    .div2 {
+      grid-area: 6 / 1 / 11 / 2;
+    }
+  
+    /* Adjust the width of the input fields for better fit */
+    input {
+      width: 100%;
+    }
+  }
+  
+  /* Media query for medium-sized screens */
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    .parent {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+    }
+  
+    .div1 {
+      grid-area: 1 / 1 / 6 / 4;
+    }
+  
+    .div2 {
+      grid-area: 1 / 4 / 6 / 7;
+    }
+  }
+  
+  /* Media query for larger screens */
+  @media screen and (min-width: 1025px) {
+    /* You can add additional styles for larger screens here if needed */
+  }
+  
