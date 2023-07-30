@@ -11,7 +11,8 @@ import { ForgotPasswordComponent } from './component/forgot-password/forgot-pass
 import { VerifyEmailComponent } from './component/verify-email/verify-email.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import {EntrepotUpdateComponent} from "./component/entrepot/entrepot-update/entrepot-update.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,14 +20,16 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     RegisterComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent,
-    DashboardComponent
+    DashboardComponent,
+    EntrepotUpdateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxDatatableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

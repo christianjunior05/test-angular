@@ -1,37 +1,41 @@
 <div class="parent">
-  <div class="div1"> 
-    <div class="container">    
-            <form>
-              <div class="mb-3">
-                <h4 class="text-dark ">Inscription</h4>
-              </div>
-              <div class="mb-3">
-                <label for="email" class="form-label">Télephone</label>
-                <input type="email" class="form-control" name="telephone" [(ngModel)]="email" placeholder="telephone" style="width: 430px;">
-              </div>
-              <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" name="email" [(ngModel)]="email" placeholder="email" style="width: 430px;">
-              </div>
-              <div class="mb-3">
-                <label for="password" class="form-label">Mot de passe</label>
-                <input type="password" class="form-control" name="password" [(ngModel)]="password" placeholder="mot de passe" style="width: 430px;">
-              </div>
-              <div class="mb-3">
-                <label for="confirm_password" class="form-label">Confirmez le mot de passe</label>
-                <input type="password" class="form-control" name="confrim_password" [(ngModel)]="password" placeholder="confirmez le mot de passe" style="width: 430px;">
-              </div>
-              <button type="button" class="btn " (click)="register()">Inscrivez-vous</button>
-              <div class="row">
-                <div class="col-md-6">
-                  <a href="/login" >Vous avez as déja un compte  ? <span class="text-danger">Connectez-vous</span></a>
-                </div>
-              </div>
-            </form>       
-   
-  </div></div>
-  <div class="div2"> </div>
+  <div class="div1">
+    <div class="container">
+    <form [formGroup]="registrationForm">
+      <div class="mb-3">
+        <h4 class="text-dark">Inscription</h4>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" class="form-control" formControlName="email" placeholder="email" style="width: 430px;">
+        <div *ngIf="formControls['email'].invalid && formControls['email'].touched" class="text-danger">
+          Please enter a valid email.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Mot de passe</label>
+        <input type="password" class="form-control" formControlName="password" placeholder="mot de passe" style="width: 430px;">
+        <div *ngIf="formControls['password'].invalid && formControls['password'].touched" class="text-danger">
+          Please enter a password with at least 6 characters.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="confirm_password" class="form-label">Confirmez le mot de passe</label>
+        <input type="password" class="form-control" formControlName="confirm_password" placeholder="confirmez le mot de passe" style="width: 430px;">
+        <div *ngIf="formControls['confirm_password'].invalid && formControls['confirm_password'].touched" class="text-danger">
+          Please enter a password with at least 6 characters.
+        </div>
+      </div>
+      <button type="button" class="btn " (click)="register()">Inscrivez-vous</button>
+      <div class="row">
+        <div class="col-md-6">
+          <a href="/login" >Vous avez as déja un compte  ? <span class="text-danger">Connectez-vous</span></a>
+        </div>
+      </div>
+    </form>
   </div>
-
-
-
+  </div>
+  <div class="div2"> </div>
+</div>
