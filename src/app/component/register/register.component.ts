@@ -48,7 +48,7 @@ export class RegisterComponent implements OnInit {
     const confirm_password = this.registrationForm.get('confirm_password')?.value;
 
     if (password !== confirm_password) {
-      alert('Les mot sde pases ne correspondent pas');
+      alert('Les mots de passes ne correspondent pas');
       return;
     }
 
