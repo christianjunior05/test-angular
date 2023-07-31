@@ -1,0 +1,268 @@
+@import '@swimlane/ngx-datatable/index.css';
+@import '@swimlane/ngx-datatable/themes/bootstrap.css';
+@import '@swimlane/ngx-datatable/assets/icons.css';
+@import "palette-variables";
+
+.ngx-datatable {
+  &.bootstrap {
+    &.core-bootstrap {
+      &.height-70-vh {
+        height: 70vh !important;
+      }
+
+      .datatable-header {
+        background-color: #F7F7F8;
+
+        .datatable-header-cell {
+          border-bottom: 0;
+        }
+      }
+
+      .datatable-body-row {
+        border-color:  #E0E0E0;
+        &.datatable-row-even {
+          background-color: initial;
+        }
+
+        &.active {
+          background-color: #975AFF;
+
+          i {
+            color: #fff !important;
+          }
+        }
+
+        .datatable-body-cell-label {
+          .cell-line-height {
+            line-height: 1.25;
+          }
+        }
+
+        .datatable-body-cell {
+          display: flex;
+          align-items: center;
+
+        }
+      }
+
+      .datatable-footer {
+        background-color: transparent;
+        color: #342E49;
+
+        .datatable-pager {
+          .pager {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            li {
+              margin: 0;
+
+              &:first-child a {
+                margin: 0;
+              }
+
+              &:first-child,
+              &:last-child,
+              &:nth-child(2),
+              &:nth-last-child(2) {
+                a {
+                  padding: 1.1rem 1.035rem;
+
+                  i {
+                    position: absolute;
+                    top: 0.55rem;
+                    left: 0.4rem;
+                  }
+                }
+              }
+
+              &.disabled {
+                a {
+                  color: (#757575);
+                  background-color:  #E0E0E0;
+                }
+              }
+
+              &:not(.disabled) {
+                a {
+                  color: #975AFF;
+
+                  &:hover {
+                    background-color: #EEEEEE !important;
+                    border-color: #E0E0E0 ;
+                  }
+                }
+
+                &.active {
+                  a {
+                    z-index: 3;
+                    color: #fff;
+                    background-color: #975AFF !important;
+                    border-color: #975AFF;
+                    font-weight: inherit;
+                  }
+                }
+
+                &:hover a {
+                  background-color:  #F5F5F5;
+                  font-weight: inherit;
+                }
+              }
+
+              a {
+                position: relative;
+                display: block;
+                padding: 1.1rem .75rem;
+                margin: 0 0 0 5px;
+                line-height: 0.1;
+                background-color: #F5F5F5;
+                border:  1px  solid #E0E0E0;
+                border-radius: 0.35rem;
+                font-size: 15px;
+
+                i {
+                  padding: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &.header-height-50 {
+        .datatable-header {
+          height: 50px !important;
+        }
+      }
+    }
+
+    .datatable-footer .datatable-pager {
+
+      .datatable-icon-left,
+      .datatable-icon-skip,
+      .datatable-icon-right,
+      .datatable-icon-prev {
+        line-height: 24px;
+      }
+    }
+  }
+}
+
+// media query for Small & Medium devices
+@media (max-width: 768px) {
+  .page-count {
+    display: none;
+  }
+
+  .datatable-pager {
+    text-align: center !important;
+    margin: 0 !important;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .desktop-hidden {
+    display: initial;
+  }
+
+  .mobile-hidden {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .desktop-hidden {
+    display: none;
+  }
+
+  .mobile-hidden {
+    display: initial;
+  }
+}
+
+html body.layout-dark {
+
+  // for dark and transparent layouts
+  .datatable-footer .pager li.disabled a {
+    color: #626164;
+  }
+
+  // for dark layout
+  &:not(.layout-transparent) {
+    .ngx-datatable.bootstrap {
+      .datatable-header {
+        background-color: #101010;
+      }
+
+      .datatable-body-row {
+        border-color: #474748;
+      }
+
+      .datatable-footer {
+        color: #B2B1B5;
+
+        .pager li {
+
+          &.disabled a,
+          a {
+            background-color: #1E1E1E;
+            border-color: #474748;
+          }
+
+          &:not(.disabled) {
+            &:hover a {
+              background-color: #1E1E1E;
+            }
+
+            &:not(.active) a:hover {
+              background-color: #1E1E1E !important;
+              border-color: #474748 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // for transparent layout
+  &.layout-transparent {
+    .ngx-datatable.bootstrap {
+      .datatable-header {
+        background-color: rgba(#000, 0.12);
+      }
+
+      .datatable-body-row {
+        border-color: rgba(#eee, 0.2);
+      }
+
+      .datatable-footer {
+        color: #D6D5D8;
+
+        .pager li {
+
+          &.disabled a,
+          a {
+            background-color: rgba(#000, 0.12);
+            border-color: rgba(#000, 0.12);
+          }
+
+          &:not(.disabled) {
+            a {
+              color: #D6D5D8;
+            }
+
+            &:hover a {
+              background-color: rgba(#000, 0.12);
+            }
+
+            &:not(.active) a:hover {
+              background-color: rgba(#000, 0.12)!important;
+              border-color: rgba(#000, 0.12) !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

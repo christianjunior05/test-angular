@@ -1,1 +1,71 @@
-<p>entrepot works!</p>
+<app-sidebar></app-sidebar>
+<section id="ngx-datatable-filter">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-body">
+            <h2 id="page-heading">
+              <span>List of Entrepot </span>
+              <button class="btn btn-primary float-right" [routerLink]="['./new']" >
+                <span>Create</span>
+              </button>
+            </h2>
+            <br/>
+            <fieldset class="form-group">
+              <label>{{ 'Show' | translate }}
+                <select name="users-list-select"
+                        class="form-control form-control-sm d-inline-block width-100 p-right-25 pl-4 mx-1"
+                        (click)="updateLimit($event)">
+                  <option value="10">10</option>
+                  <option value="25">25</option>
+                  <option value="50">50</option>
+                  <option value="100">100</option>
+                </select>
+                {{ 'Entries' | translate }}</label>
+              <label for="ngx-filter-ref" class="float-right">{{ 'Search' | translate }}:
+                <input id="ngx-filter-ref" class="form-control form-control-sm d-inline-block width-200 ml-1"
+                       type="text" (keyup)="filterUpdate($event)" placeholder="{{'Search by Last name, First name and email'|translate}}" />
+              </label>
+            </fieldset>
+
+            <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-triangle-path"
+                         [fullScreen]="true">
+              <p style="color: white"> kYC v2.0 </p>
+            </ngx-spinner>
+
+            <ngx-datatable
+                           class="ngx-datatable bootstrap core-bootstrap fixed-header fixed-row virtualized scroll-horz"
+                           [headerHeight]="50" [footerHeight]="50" [rowHeight]="50"
+                           [limit]="10" [rows]="entrepot" [scrollbarH]="true">
+
+              <ngx-datatable-column name="Name" prop="name" [canAutoResize]="true">
+                <ng-template let-row="row" let-name="value" ngx-datatable-cell-template>
+                  <div class="d-flex align-items-center">
+                    <div class="cell-line-height">
+                      <p class="font-medium-1 line-height-1 mb-0">{{ row.name }}</p>
+                    </div>
+                  </div>
+                </ng-template>
+              </ngx-datatable-column>
+              <ngx-datatable-column name="Capacity" prop="capacity" ></ngx-datatable-column>
+              <ngx-datatable-column name="Stock" prop="stock"></ngx-datatable-column>
+              <ngx-datatable-column name="Address' | translate }}" prop="address"></ngx-datatable-column>
+              <ngx-datatable-column name="Actions">
+              <ng-template let-row="row" ngx-datatable-cell-template>
+                <a [routerLink]="['./',editLink, row.id]" class="success p-0">
+                  <i class="ft-edit font-medium mr-2"></i>
+                </a>
+                <a (click)="deleteEntrepot(row)"
+                   class="danger p-0">
+                  <i class="ft-trash font-medium mr-2"></i>
+                </a>
+              </ng-template>
+            </ngx-datatable-column>
+            </ngx-datatable>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

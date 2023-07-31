@@ -1,0 +1,84 @@
+/* Base styles for the section */
+#ngx-datatable-filter {
+    padding: 20px;
+  }
+  
+  /* Styles for the card */
+  .card {
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  /* Styles for the heading and create button */
+  #page-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Styles for the filter and search elements */
+  .form-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .form-control {
+    width: auto;
+  }
+  
+  /* Styles for the spinner */
+  ngx-spinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+  }
+  
+  /* Styles for the datatable */
+  .ngx-datatable {
+    width: 100%;
+  }
+  
+  /* Custom styles for the datatable columns */
+  .ngx-datatable-column {
+    text-align: left;
+    padding: 10px;
+  }
+  
+  /* Styles for responsive design */
+  @media screen and (max-width: 768px) {
+    #page-heading {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .form-group {
+      flex-direction: column;
+    }
+  
+    .btn-primary {
+      margin-top: 10px;
+    }
+  }
+  

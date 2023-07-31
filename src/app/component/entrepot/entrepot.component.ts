@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Entrepot} from "../../model/entrepot.model";
+import {Input} from '@angular/core';
 
 @Component({
   selector: 'app-entrepot',
@@ -7,6 +8,11 @@ import {Entrepot} from "../../model/entrepot.model";
   styleUrls: ['./entrepot.component.css']
 })
 export class EntrepotComponent implements OnInit {
+  @Input() editLink = 'update';
+  columnMode: any;
+  entrepot: Entrepot [] = [] ;
+
+
 
   constructor() { }
 

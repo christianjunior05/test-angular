@@ -1,1 +1,78 @@
-<p>entrepot-update works!</p>
+<app-sidebar></app-sidebar>
+<br><br>
+
+<section class="container mt-5">
+  <div class="row">
+    <div class="col-12">
+      <div class="content-header">
+        <h3 class="card-title" *ngIf="isEditMode">Modify the entrepot {{ entrepot.name }}</h3>
+        <h3 class="card-title" *ngIf="!isEditMode">Create a new entrepot</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Account Settings starts -->
+  <div class="row">
+    <div class="col-md-3 mt-3">
+      <!-- Nav tabs -->
+      <ul class="nav flex-column nav-pills" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:;" [ngClass]="{active: activeTab === 'general'}"
+            (click)="setActiveTab('general')" id="general-tab" data-toggle="tab" role="tab" aria-controls="general"
+            aria-selected="true">
+            <i class="ft-settings mr-1 align-middle"></i>
+            <span class="align-middle">General</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-9">
+      <!-- Tab panes -->
+      <div class="card">
+        <div class="card-content">
+          <div class="card-body">
+            <div class="tab-content">
+              <!-- General Tab -->
+              <div class="tab-pane" [ngClass]="{active: activeTab === 'general'}" id="general" role="tabpanel"
+                aria-labelledby="general-tab">
+                <hr class="mt-1 mt-sm-2">
+                <form [formGroup]="entrepotForm" (ngSubmit)="onSubmit()">
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="name">Name</label>
+                      <input type="text" class="form-control" id="name" formControlName="name" placeholder="Name" required>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <label for="address">Address</label>
+                      <input formControlName="address" type="text" class="form-control" id="address" placeholder="Address"
+                        required>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <label for="capacity">Capacity</label>
+                      <input formControlName="capacity" type="text" class="form-control" id="capacity" placeholder="Capacity"
+                        required>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <label for="stock">Stock</label>
+                      <input formControlName="stock" type="text" class="form-control" id="stock" placeholder="Stock" required>
+                    </div>
+
+                    <div class="col-12 d-flex justify-content-end">
+                      <button type="submit" class="btn  mb-1">Save</button><br>
+                      <button type="reset" class="btn btn-secondary mb-1" (click)="previousState()">Cancel</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Account Settings ends -->
+</section>

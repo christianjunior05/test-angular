@@ -10,7 +10,7 @@
   .div1 {
     grid-area: 1 / 1 / 6 / 8;
     padding: 30px;
-    margin-left: 15px;
+    margin-right: 15px;
   }
   
   .div2 {
