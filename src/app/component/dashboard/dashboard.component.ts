@@ -37,11 +37,14 @@ export class DashboardComponent implements OnInit {
   }
 
   deleteEntrepot(entrepot: Entrepot) {
-    if (window.confirm('Are you sure you want to delete ' + entrepot.name + ' ' + ' ?')) {
+    if (window.confirm('Are you sure you want to delete ' + entrepot.libelle + ' ' + ' ?')) {
       this.entrep.deleteEntrepot(entrepot);
     }
   }
   goToEntrepotDetails(id: string) {
+    this.router.navigate(['/detail', id]).then(r => console.log(r));
+  }
+  goToEntrepotModify(id: string) {
     this.router.navigate(['/update', id]).then(r => console.log(r));
   }
 }

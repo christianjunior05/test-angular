@@ -2,89 +2,93 @@
 .row {
     margin-bottom: 20px;
   }
-  
+
+
   /* Styles for the content header */
   .content-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  .btn {
-    background-color: #CB7A4Bff;
-    color: white;
-  }
+
   .content-header h3 {
     margin-bottom: 0;
   }
-  
+
   /* Styles for the nav pills */
   .nav-pills {
     margin-top: 20px;
     border: 1px solid #e2e2e2;
     border-radius: 5px;
   }
-  
+
   .nav-item {
     margin-bottom: 0;
   }
-  
+
   .nav-link {
     border-radius: 0;
     text-align: left;
   }
-  
+
   /* Styles for the active nav pill */
   .nav-link.active {
     background-color: #007bff;
     color: #fff;
   }
-  
+
   /* Styles for the card */
   .card {
     border: 1px solid #e2e2e2;
     border-radius: 5px;
   }
-  
+
   .card-content {
     padding: 20px;
   }
-  
+
   /* Styles for the form inputs */
   .form-group {
     margin-bottom: 20px;
   }
-  
+
   .form-group label {
     font-weight: bold;
   }
-  
+
   .form-control {
     width: 100%;
     border: 1px solid #e2e2e2;
     border-radius: 5px;
     padding: 10px;
   }
-  
+
   /* Styles for the submit buttons */
   .d-flex.justify-content-end .btn-primary,
   .d-flex.justify-content-end .btn-secondary {
     margin-top: 20px;
   }
-  
+
   /* Styles for responsive design */
   @media screen and (max-width: 768px) {
     .col-md-3 {
       order: 2;
       margin-top: 20px;
     }
-  
+
     .col-md-9 {
       order: 1;
     }
-  
+
     .nav-pills {
       flex-direction: row;
       justify-content: space-around;
     }
   }
-  
+/* styles.css */
+/* styles.css */
+.btn-transport {
+  color: #fd7e14;
+  background-color: rgba(253, 161, 106, 0.8); /* Couleur d'arrière-plan transport légèrement transparente */
+}
+

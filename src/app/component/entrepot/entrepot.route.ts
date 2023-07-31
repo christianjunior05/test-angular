@@ -4,6 +4,7 @@ import {Entrepot} from '../../model/entrepot.model';
 import {EntrepotComponent} from "./entrepot.component";
 import {EntrepotService} from "./entrepot.service";
 import {EntrepotUpdateComponent} from "./entrepot-update/entrepot-update.component";
+import {EntrepotDetailComponent} from "./entrepot-detail/entrepot-detail.component";
 
 export let entrepotRoute: Routes;
 entrepotRoute = [
@@ -17,7 +18,7 @@ entrepotRoute = [
 
   {
     path: 'detail/:id',
-    component: EntrepotUpdateComponent,
+    component: EntrepotDetailComponent,
   },
 
   {

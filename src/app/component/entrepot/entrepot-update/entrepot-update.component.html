@@ -1,33 +1,17 @@
 <app-sidebar></app-sidebar>
 <br><br>
-
 <section class="container mt-5">
-  <div class="row">
+  <div class="row ">
     <div class="col-12">
       <div class="content-header">
-        <h3 class="card-title" *ngIf="isEditMode">Modify the entrepot {{ entrepot.name }}</h3>
-        <h3 class="card-title" *ngIf="!isEditMode">Create a new entrepot</h3>
+        <h3 class="card-title" *ngIf="isEditMode">Modifier l'entrepot {{ entrepot.libelle }}</h3>
+        <h3 class="card-title" *ngIf="!isEditMode">Créer un nouvel entrepot </h3>
       </div>
     </div>
   </div>
-
   <!-- Account Settings starts -->
-  <div class="row">
-    <div class="col-md-3 mt-3">
-      <!-- Nav tabs -->
-      <ul class="nav flex-column nav-pills" id="myTab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link" href="javascript:;" [ngClass]="{active: activeTab === 'general'}"
-            (click)="setActiveTab('general')" id="general-tab" data-toggle="tab" role="tab" aria-controls="general"
-            aria-selected="true">
-            <i class="ft-settings mr-1 align-middle"></i>
-            <span class="align-middle">General</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="col-md-9">
+  <div class="row mb-5">
+    <div class="col-md-12">
       <!-- Tab panes -->
       <div class="card">
         <div class="card-content">
@@ -39,31 +23,42 @@
                 <hr class="mt-1 mt-sm-2">
                 <form [formGroup]="entrepotForm" (ngSubmit)="onSubmit()">
                   <div class="form-row">
-                    <div class="form-group col-md-6">
-                      <label for="name">Name</label>
-                      <input type="text" class="form-control" id="name" formControlName="name" placeholder="Name" required>
-                    </div>
+                    <div class="form-group col-md-12 d-flex px-3">
+                      <div class="col-md-6">
+                        <label for="libelle">Libelle</label>
+                        <input type="text" class="form-control" id="libelle" formControlName="libelle" placeholder="libelle"
+                          required style="width: 430px;">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="superficy">Superficie(m2)</label>
+                        <input formControlName="superficy" type="text" class="form-control" id="superficy"
+                          placeholder="Superficie" style="width: 430px;" required>
+                      </div>
 
-                    <div class="form-group col-md-6">
-                      <label for="address">Address</label>
-                      <input formControlName="address" type="text" class="form-control" id="address" placeholder="Address"
-                        required>
                     </div>
+                    <div class="form-group col-md-12 d-flex px-3">
+                      <div class="form-group col-md-6">
+                        <label for="longitude">Longitude</label>
+                        <input formControlName="longitude" type="text" class="form-control" id="longitude"
+                          placeholder="Longitude" style="width: 430px;" required>
+                      </div>
 
-                    <div class="form-group col-md-6">
-                      <label for="capacity">Capacity</label>
-                      <input formControlName="capacity" type="text" class="form-control" id="capacity" placeholder="Capacity"
-                        required>
+                      <div class="form-group col-md-6">
+                        <label for="latitude">Latitude</label>
+                        <input formControlName="latitude" type="text" class="form-control" id="latitude" placeholder="Latitude"
+                          style="width: 430px;" required>
+                      </div>
                     </div>
-
-                    <div class="form-group col-md-6">
-                      <label for="stock">Stock</label>
-                      <input formControlName="stock" type="text" class="form-control" id="stock" placeholder="Stock" required>
-                    </div>
-
-                    <div class="col-12 d-flex justify-content-end">
-                      <button type="submit" class="btn  mb-1">Save</button><br>
-                      <button type="reset" class="btn btn-secondary mb-1" (click)="previousState()">Cancel</button>
+                      <div class="form-group col-md-12 d-flex px-3">
+                      <div class="form-group col-md-6">
+                        <label for="placer">Placer</label>
+                        <input formControlName="placer" type="text" class="form-control" id="placer" placeholder="Placer"
+                               style="width: 430px;" required>
+                      </div>
+                      </div>
+                    <div class="col-12 d-flex justify-content-between">
+                      <button type="button" class="btn btn-transport mb-1" (click)="previousState()">Annuler</button>
+                      <button type="submit" class="btn btn-success mb-1" *ngIf="!isEditMode">Enregistrer</button>
                     </div>
                   </div>
                 </form>

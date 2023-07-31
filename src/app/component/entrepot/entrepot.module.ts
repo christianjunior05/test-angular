@@ -6,10 +6,12 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxDatatableModule} from '@swimlane/ngx-datatable';
 import {entrepotRoute} from './entrepot.route';
 import {EntrepotComponent} from "./entrepot.component";
+import { EntrepotDetailComponent } from './entrepot-detail/entrepot-detail.component';
 
 @NgModule({
   declarations: [
     EntrepotComponent,
+    EntrepotDetailComponent,
   ],
     imports: [
         CommonModule,
