@@ -41,12 +41,13 @@ export class EntrepotUpdateComponent implements OnInit {
             this.entrepot = data;
             this.updateForm(this.entrepot);
           } else {
+            // Gérer le cas où l'entrepôt n'a pas été trouvé (par exemple, rediriger vers une page d'erreur)
           }
         });
       }
     });
-
   }
+
   private updateForm(entrepot: Entrepot): void {
     this.entrepotForm.patchValue({
       name: entrepot.name,

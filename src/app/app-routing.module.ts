@@ -14,6 +14,7 @@ const routes: Routes = [
   {path: 'register', component : RegisterComponent},
   {path: 'verify-email', component : VerifyEmailComponent},
   {path: 'forgot-password', component : ForgotPasswordComponent},
+  { path: '**', redirectTo: 'login' },
   {
     path: 'update/:id',
     component: EntrepotUpdateComponent,

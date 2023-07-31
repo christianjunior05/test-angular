@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { AuthService } from 'src/app/shared/auth.service';
 import {Entrepot} from "../../model/entrepot.model";
-import {ActivatedRoute, Router} from "@angular/router";
+import {Router} from "@angular/router";
 import {EntrepotService} from "../entrepot/entrepot.service";
 
 @Component({
@@ -12,21 +12,9 @@ import {EntrepotService} from "../entrepot/entrepot.service";
 export class DashboardComponent implements OnInit {
   @Input() editLink = 'update';
     entrepot: Entrepot[] = [];
-  studentObj: Entrepot = {
-    id: '',
-    name: '',
-    address: '',
-    capacity: '',
-    stock: '',
-  };
-  id: string = '';
-  name: string = '';
-  address: string = '';
-  stock: string = '';
-  capacity: string = ''
 
-  constructor(private auth: AuthService, private entrep: EntrepotService, private router: Router,
-              private route: ActivatedRoute) { }
+
+  constructor(private auth: AuthService, private entrep: EntrepotService, private router: Router) { }
 
   ngOnInit(): void {
     this.getAllEntrepot();
