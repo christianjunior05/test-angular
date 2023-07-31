@@ -15,7 +15,8 @@ export class RegisterComponent implements OnInit {
     this.registrationForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      confirm_password: ['', [Validators.required, Validators.minLength(6)]]
+      confirm_password: ['', [Validators.required, Validators.minLength(6)]],
+      mobile: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10) ]]
     });
   }
 
@@ -28,7 +29,8 @@ export class RegisterComponent implements OnInit {
     this.registrationForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      confirm_password: ['', [Validators.required, Validators.minLength(6)]]
+      confirm_password: ['', [Validators.required, Validators.minLength(6)]],
+      mobile: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10) ]]
     });
   }
 
@@ -46,7 +48,7 @@ export class RegisterComponent implements OnInit {
     const confirm_password = this.registrationForm.get('confirm_password')?.value;
 
     if (password !== confirm_password) {
-      alert('Password and Confirm Password do not match.');
+      alert('Les mot sde pases ne correspondent pas');
       return;
     }
 

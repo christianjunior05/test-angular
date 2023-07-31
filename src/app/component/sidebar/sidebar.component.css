@@ -1,3 +1,33 @@
 .bg-marron{
     background-color: #CB7A4Bff;
 }
+/* Ajoutez ce code CSS pour améliorer la sidebar */
+
+/* Centrer la sidebar verticalement */
+.navbar {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Ajustements visuels */
+  .navbar-toggler {
+    margin-right: 10px;
+  }
+  
+  .name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 10px;
+  }
+  
+  .nav-pills .nav-item .nav-link {
+    color: #fff;
+  }
+  
+  .nav-pills .nav-item .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  /* Ajoutez ce code CSS pour centrer la partie de l'image */
+
+  

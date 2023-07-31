@@ -92,3 +92,12 @@
   background-color: rgba(253, 161, 106, 0.8); /* Couleur d'arrière-plan transport légèrement transparente */
 }
 
+  .stp{
+    background-color: #CB7A4Bff;
+    color: white;
+  }.stp:hover{
+    background-color: white;
+    color: #CB7A4Bff;
+    border-color: #CB7A4Bff;
+
+  }

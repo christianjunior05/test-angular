@@ -35,8 +35,7 @@ export class EntrepotUpdateComponent implements OnInit {
     });
 
     this.route.params.subscribe(params => {
-      const routePath = this.route.snapshot.routeConfig?.path;
-      this.isEditMode = routePath === 'detail/:id';
+      this.isEditMode = !!params['id'];
       if (this.isEditMode) {
         this.entrepotService.find(params['id']).subscribe(data => {
           if (data) {

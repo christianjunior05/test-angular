@@ -62,4 +62,15 @@
   .mr-2 {
     margin-right: 10px;
   }
-  
+  /* Ajoutez ce code CSS pour centrer le tableau */
+.tex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   /* Pour centrer verticalement */
+}
+.text-end {
+  display: flex;
+
+  margin-bottom: 20px;
+}
