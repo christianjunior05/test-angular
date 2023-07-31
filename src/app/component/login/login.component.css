@@ -62,6 +62,10 @@ a{
 .input-group-text {
   cursor: pointer;
 }
+.txt{
+  margin-left: 70px;
+  font-size: 19px;
+}
 h1 {
   margin-top: 16rem;
   display: flex;
