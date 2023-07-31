@@ -3,14 +3,14 @@
 <div class="container-fluid mt-5">
 
   <div class="row">
-    <div class="col-md-8 mt-2">
+    <div class="col-md-8 mt-5">
       <h2 id="page-heading">
         <span>Liste des entrepot </span>
         <button class="btn btn-primary" [routerLink]="['/new']">
           <span>Créer un nouvel entrepot </span>
         </button>
-      </h2>      <div class="card p-3 shadow">
-        <div class="card-body">
+      </h2>      <div class="card p-3 shadow" style="width: 1070px;">
+        <div class="card-body" style="width: 1000px;">
           <ngx-datatable class="bootstrap" [rows]="entrepot" [columnMode]="'force'"
                          [headerHeight]="50" [rowHeight]="'auto'" [footerHeight]="50" [limit]="10">
             <ngx-datatable-column name="Name" prop="name"></ngx-datatable-column>
@@ -19,9 +19,12 @@
             <ngx-datatable-column name="Stock" prop="stock"></ngx-datatable-column>
             <ngx-datatable-column name="Action">
               <ng-template ngx-datatable-cell-template let-row="row">
-                <button class=" btn btn-success" (click)="goToEntrepotDetails(row.id)">Modifier</button>
+                <div class="d-flex">
+                  <button class=" btn btn-outline-success mr-2 " (click)="goToEntrepotDetails(row.id)">Modifier</button>
                 
-                <button class="btn btn-danger" (click)="deleteEntrepot(row)">Supprimer</button>
+                  <button class="btn btn-outline-danger " (click)="deleteEntrepot(row)">Supprimer</button>
+                </div>
+                
               </ng-template>
             </ngx-datatable-column>
           </ngx-datatable>

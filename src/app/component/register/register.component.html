@@ -12,6 +12,13 @@
          S'i vous plait veuillez entrez un mail 
         </div>
       </div>
+      <div class="mb-3">
+        <label for="mobile" class="form-label">Telephone</label>
+        <input type="text" class="form-control" formControlName="email" placeholder="numéro de telephone" style="width: 430px;">
+        <div *ngIf="formControls['mobile'].invalid && formControls['mobile'].touched" class="text-danger">
+         S'i vous plait veuillez entrez un numéro de telephone valide
+        </div>
+      </div>
 
       <div class="mb-3">
         <label for="password" class="form-label">Mot de passe</label>
