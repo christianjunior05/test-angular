@@ -16,7 +16,6 @@ export class RegisterComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirm_password: ['', [Validators.required, Validators.minLength(6)]],
-      mobile: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10) ]]
     });
   }
 
@@ -30,7 +29,6 @@ export class RegisterComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirm_password: ['', [Validators.required, Validators.minLength(6)]],
-      mobile: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10) ]]
     });
   }
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import firebase from "firebase/compat";
 import User = firebase.User;
+import {AuthService} from "../../shared/auth.service";
 
 @Component({
   selector: 'app-sidebar',
@@ -12,7 +13,7 @@ export class SidebarComponent implements OnInit {
   currentUser: User | null;
   userEmail: string | null;
 
-  constructor(private auth: AngularFireAuth) {
+  constructor(private auth: AngularFireAuth, private auths: AuthService) {
     this.currentUser = null;
     this.userEmail = null;
   }
@@ -27,5 +28,8 @@ export class SidebarComponent implements OnInit {
         this.userEmail = null;
       }
     });
+  }
+  logout(): void {
+    this.auths.logout()
   }
 }
