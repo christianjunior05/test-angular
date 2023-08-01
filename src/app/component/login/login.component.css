@@ -86,3 +86,44 @@ h1 {
   background-color: #CB7A4Bff;
   color: white;
 }
+@media screen and (max-width: 768px) {
+  .parent {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  .div1 {
+    grid-area: 1 / 1 / 4 / 2;
+    height: auto;
+    background-image: none; /* Supprimer l'image de fond pour les petits écrans */
+  }
+
+  .div2 {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+
+  .login-form {
+    padding-top: 60px;
+  }
+
+  h1 {
+    margin-top: 8rem; /* Ajuster la marge supérieure pour le texte */
+    margin-left: 20px; /* Ajuster la marge gauche pour le texte */
+    font-size: 30px; /* Ajuster la taille du texte */
+  }
+
+  .pr {
+    font-size: 22px; /* Ajuster la taille du texte */
+    margin-left: 20px; /* Ajuster la marge gauche pour le texte */
+  }
+
+  .btn {
+    /* Styles du bouton adaptés pour les petits écrans */
+    background-color: #cb7a4bff;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+}

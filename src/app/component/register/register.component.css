@@ -74,8 +74,47 @@
     }
   }
   
+  @media screen and (max-width: 768px) {
+    .parent {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(10, 1fr);
+    }
+  
+    .div1 {
+      grid-area: 1 / 1 / 11 / 2;
+      padding: 15px;
+      margin-right: 0; /* Remove right margin for small screens */
+    }
+  
+    .div2 {
+      grid-area: 6 / 1 / 11 / 2;
+      background-image: none;
+    }
+  
+    /* Adjust the width of the input fields for better fit */
+    input {
+      width: 100%;
+    }
+  }
+  
+  /* Media query for medium-sized screens */
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    .parent {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+    }
+  
+    .div1 {
+      grid-area: 1 / 1 / 6 / 4;
+    }
+  
+    .div2 {
+      grid-area: 1 / 4 / 6 / 7;
+      background-image: none;
+    }
+  }
+  
   /* Media query for larger screens */
   @media screen and (min-width: 1025px) {
     /* You can add additional styles for larger screens here if needed */
   }
-  
